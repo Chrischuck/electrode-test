@@ -1,0 +1,53 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "description": "",
+  "homepage": "",
+  "author": {
+    "name": "Chris",
+    "email": "chrischuck35@gmail.com",
+    "url": ""
+  },
+  "contributors": [],
+  "files": [
+    "server",
+    "src",
+    "lib",
+    "dist"
+  ],
+  "main": "lib/server/index.js",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "Chrischuck"
+  },
+  "engines": {
+    "node": ">= 4 <= 8",
+    "npm": ">= 3 <= 5"
+  },
+  "scripts": {
+    "build": "clap build",
+    "prod-start": "NODE_ENV=production clap -n -x electrode/build prod",
+    "start": "if test \"$NODE_ENV\" = \"production\"; then npm run prod-start; else clap dev; fi",
+    "test": "clap check",
+    "coverage": "clap check",
+    "prod": "echo 'Starting standalone server in PROD mode'; NODE_ENV=production node ./lib/server/",
+    "heroku-postbuild": "clap build"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "compression": "^1.7.2",
+    "electrode-archetype-react-app": "^5.0.0",
+    "electrode-confippet": "^1.0.0",
+    "electrode-react-webapp": "^2.1.0",
+    "electrode-redux-router-engine": "^1.5.0",
+    "express": "^4.0.0",
+    "lodash": "^4.10.1",
+    "react-notify-toast": "^0.4.0"
+  },
+  "devDependencies": {
+    "electrode-archetype-react-app-dev": "^5.0.0",
+    "favicons-webpack-plugin": "0.0.7"
+  },
+  "private": true
+}
