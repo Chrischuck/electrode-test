@@ -9,8 +9,11 @@ const defaultConfig = require("electrode-confippet").config;
 const Confippet = require("electrode-confippet");
 const compression = require('compression')
 
-// compress all responses
+// gzip!!
 app.use(compression());
+
+// need api calls
+app.get('/some', (req, res) => res.status(200).send('200 ok'))
 
 const loadConfigs = function(userConfig) {
   //use confippet to merge user config and default config
