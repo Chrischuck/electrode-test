@@ -13,7 +13,7 @@ module.exports = function createReduxStore(req) {
   return Promise.all([
     // dispatch any other asynchronous actions here
     store.dispatch(() => {
-      console.log('asdfasdfasdfasdf')
+      console.log('action fired')
       return {
         type: 'asdfas'
       }
