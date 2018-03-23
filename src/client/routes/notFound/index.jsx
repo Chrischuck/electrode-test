@@ -22,5 +22,6 @@ import Notifications from "react-notify-toast";
 
 export default () =>
   <div >
+    
    not found
   </div>;

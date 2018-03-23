@@ -3,36 +3,34 @@
 //
 
 import ReduxRouterEngine from "electrode-redux-router-engine";
-import {routes} from "../../client/routes";
-import {createStore} from "redux";
-import rootReducer from "../../client/reducers";
+import Promise from 'bluebird'
+import { createStore, applyMiddleware } from "redux";
+import thunkMiddleware from 'redux-thunk';
 
-const Promise = require("bluebird");
+import { routes } from "../../client/routes";
+import configureStore from '../configureStore'
+//import rootReducer from "../../client/reducers";
 
-function createReduxStore(req, match) { // eslint-disable-line
+// default store
+function createReduxStore(req) {
   const initialState = {
-    checkBox: {checked: false},
-    number: {value: 999}
-  };
+    default: true
+  }
 
-  const store = createStore(rootReducer, initialState);
-  return Promise.resolve(store);
+  const store = configureStore(initialState);
+
+  return Promise.all([
+    // dispatch any other asynchronous actions here
+  ])
+  .then(() => store);
 }
 
-//
-// This function is exported as the content for the webapp plugin.
-//
-// See config/default.json under plugins.webapp on specifying the content.
-//
-// When the Web server hits the routes handler installed by the webapp plugin, it
-// will call this function to retrieve the content for SSR if it's enabled.
-//
-//
+const routesHandlerPath = process.env.APP_SRC_DIR + '/routesHandlers'
 
 module.exports = (req) => {
   const app = req.server && req.server.app || req.app;
   if (!app.routesEngine) {
-    app.routesEngine = new ReduxRouterEngine({routes, createReduxStore});
+    app.routesEngine = new ReduxRouterEngine({ routes, createReduxStore, routesHandlerPath });
   }
 
   return app.routesEngine.render(req);

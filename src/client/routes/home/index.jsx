@@ -1,23 +1,16 @@
-/*
- * This is a demo component the Eletrode app generator included
- * to show using Skeleton CSS lib (named base.css) and Redux
- * store for display HTML elements and managing states.
- *
- * To start your own app, please replace or remove these files:
- *
- * - this file (home.jsx)
- * - demo-buttons.jsx
- * - demo-pure-states.jsx
- * - demo-states.jsx
- * - reducers/index.jsx
- * - styles/*.css
- *
- */
+import { connect } from "react-redux";
+
 
 import React from "react";
 
 
-export default () =>(
-  <div >
-   hello
-  </div>);
+export class Home extends React.Component {
+  render() {
+    console.log(this.props.default)
+    return (
+      <div>hello</div>
+    );
+  }
+}
+
+export default connect(state => state)(Home);

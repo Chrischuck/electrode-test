@@ -5,7 +5,6 @@ import { routes } from "./routes";
 import { Router, browserHistory } from "react-router";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import rootReducer from "./reducers";
 
 import { notify } from "react-notify-toast";
 //
@@ -25,7 +24,14 @@ require.ensure(
 //
 
 window.webappStart = () => {
+
+  // get's initial state from server
   const initialState = window.__PRELOADED_STATE__;
+
+  console.log(initialState)
+  // root reducer
+  const rootReducer = (s, a) => s
+
   const store = createStore(rootReducer, initialState);
   render(
     <Provider store={store}>

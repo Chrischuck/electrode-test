@@ -9,6 +9,8 @@ const defaultConfig = require("electrode-confippet").config;
 const Confippet = require("electrode-confippet");
 const compression = require('compression')
 
+process.env.APP_SRC_DIR = __dirname
+
 // gzip!!
 app.use(compression());
 
