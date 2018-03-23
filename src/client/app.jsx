@@ -7,6 +7,12 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 
 import { notify } from "react-notify-toast";
+
+import './styles/custom.css'
+import './styles/normalize.css'
+import './styles/raleway.css'
+import './styles/skeleton.css'
+
 //
 
 //

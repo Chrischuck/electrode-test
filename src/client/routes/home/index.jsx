@@ -12,7 +12,11 @@ import eight from '../../images/8.jpg'
 import nine from '../../images/9.jpg'
 import ten from '../../images/10.jpg'
 import eleven from '../../images/11.jpg'
-
+import twelve from '../../images/12.jpg'
+import thirteen from '../../images/13.jpg'
+import fourteen from '../../images/14.jpg'
+import fifteen from '../../images/15.jpg'
+import sixteen from '../../images/16.jpg'
 
 export class Home extends React.Component {
   render() {
@@ -30,6 +34,11 @@ export class Home extends React.Component {
         <img src={nine} />
         <img src={ten} />
         <img src={eleven} />
+        <img src={twelve} />
+        <img src={thirteen} />
+        <img src={fourteen} />
+        <img src={fifteen} />
+        <img src={sixteen} />
       </div>
     );
   }
