@@ -1,6 +1,10 @@
 import configureStore from "../../configureStore";
 import Promise from 'bluebird'
 
+import rootReducer from "../../../client/reducers";
+import * as actions from '../../../client/actions'
+
+
 // WOOOOW NO BABEL
 module.exports = function createReduxStore(req) {
 
@@ -11,13 +15,8 @@ module.exports = function createReduxStore(req) {
   const store = configureStore(initialState);
 
   return Promise.all([
-    // dispatch any other asynchronous actions here
-    store.dispatch(() => {
-      console.log('action fired')
-      return {
-        type: 'asdfas'
-      }
-    })
+
+    store.dispatch(actions.getDogPic())
 
   ])
   .then(() => store);

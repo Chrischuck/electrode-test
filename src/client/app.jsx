@@ -8,10 +8,7 @@ import { Provider } from "react-redux";
 
 import { notify } from "react-notify-toast";
 
-import './styles/custom.css'
-import './styles/normalize.css'
-import './styles/raleway.css'
-import './styles/skeleton.css'
+import createReducer from './reducers'
 
 //
 
@@ -34,11 +31,10 @@ window.webappStart = () => {
   // get's initial state from server
   const initialState = window.__PRELOADED_STATE__;
 
-  console.log(initialState)
   // root reducer
   const rootReducer = (s, a) => s
 
-  const store = createStore(rootReducer, initialState);
+  const store = createStore(createReducer(), initialState);
   render(
     <Provider store={store}>
       <Router history={browserHistory}>{routes}</Router>

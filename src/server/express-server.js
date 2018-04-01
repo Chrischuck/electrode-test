@@ -17,8 +17,9 @@ app.use(compression());
 // need api calls
 app.get('/some', (req, res) => res.status(200).send('200 ok'))
 
+
 const loadConfigs = function(userConfig) {
-  //use confippet to merge user config and default config
+  // GET RID OF LODASH
   if (_.get(userConfig, "plugins.electrodeStaticPaths.enable")) {
     userConfig.plugins.electrodeStaticPaths.enable = false;
   }

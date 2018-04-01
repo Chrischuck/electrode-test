@@ -9,7 +9,6 @@ import thunkMiddleware from 'redux-thunk';
 
 import { routes } from "../../client/routes";
 import configureStore from '../configureStore'
-//import rootReducer from "../../client/reducers";
 
 // default store
 function createReduxStore(req) {

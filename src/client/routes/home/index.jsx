@@ -18,27 +18,36 @@ import fourteen from '../../images/14.jpg'
 import fifteen from '../../images/15.jpg'
 import sixteen from '../../images/16.jpg'
 
+import '../../styles/custom.css'
+import '../../styles/normalize.css'
+import '../../styles/raleway.css'
+import '../../styles/skeleton.css'
+
 export class Home extends React.Component {
   render() {
-    console.log(this.props.default)
     return (
-      <div>
-        <img src={one} />
-        <img src={two} />
-        <img src={three} />
-        <img src={four} />
-        <img src={five} />
-        <img src={six} />
-        <img src={seven} />
-        <img src={eight} />
-        <img src={nine} />
-        <img src={ten} />
-        <img src={eleven} />
-        <img src={twelve} />
-        <img src={thirteen} />
-        <img src={fourteen} />
-        <img src={fifteen} />
-        <img src={sixteen} />
+      <div className='container'>
+        <div>
+          <h1>This dog image is loaded from an API</h1>
+          <img src={this.props.home.url} style={{height: '800px', height: '800px'}} />
+        </div>
+
+        <img src={one} style={{height: '500px', height: '500px'}} />
+        <img src={two} style={{height: '500px', height: '500px'}} />
+        <img src={three} style={{height: '500px', height: '500px'}} />
+        <img src={four} style={{height: '500px', height: '500px'}} />
+        <img src={five} style={{height: '500px', height: '500px'}} />
+        <img src={six} style={{height: '500px', height: '500px'}} />
+        <img src={seven} style={{height: '500px', height: '500px'}} />
+        <img src={eight} style={{height: '500px', height: '500px'}} />
+        <img src={nine} style={{height: '500px', height: '500px'}} />
+        <img src={ten} style={{height: '500px', height: '500px'}} />
+        <img src={eleven} style={{height: '500px', height: '500px'}} />
+        <img src={twelve} style={{height: '500px', height: '500px'}} />
+        <img src={thirteen} style={{height: '500px', height: '500px'}} />
+        <img src={fourteen} style={{height: '500px', height: '500px'}} />
+        <img src={fifteen} style={{height: '500px', height: '500px'}} />
+        <img src={sixteen} style={{height: '500px', height: '500px'}} />
       </div>
     );
   }
