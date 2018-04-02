@@ -13,8 +13,12 @@ import configureStore from '../configureStore'
 // default store
 function createReduxStore(req) {
   const initialState = {
-    default: true
+    home: {
+      url: null
+    }
   }
+  console.log(req._parsedUrl.query)
+  console.log('\n')
 
   const store = configureStore(initialState);
 

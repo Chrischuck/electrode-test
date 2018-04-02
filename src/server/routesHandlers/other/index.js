@@ -7,12 +7,8 @@ import * as actions from '../../../client/actions'
 
 // WOOOOW NO BABEL
 module.exports = function createReduxStore(req) {
-  console.log(req)
-  // need a "from other route"
   const initialState = {
-    home: {
-      url: null
-    }
+    default: false
   }
 
   const store = configureStore(initialState);

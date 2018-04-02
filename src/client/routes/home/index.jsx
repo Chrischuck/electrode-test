@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import React from "react";
+import { Link } from "react-router";
 
 import one from '../../images/1.jpg'
 import two from '../../images/2.jpg'
@@ -25,8 +26,13 @@ import '../../styles/skeleton.css'
 
 export class Home extends React.Component {
   render() {
+    // if it's a push action and we haven't rerendered, then we need to prefetch in component did mount
+    
+    console.log(this.props.location.action)
     return (
       <div className='container'>
+        <Link to='/signup' >asasdfsdf</Link>
+
         <div>
           <h1>This dog image is loaded from an API</h1>
           <img src={this.props.home.url} style={{height: '800px', height: '800px'}} />

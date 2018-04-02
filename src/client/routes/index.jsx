@@ -5,9 +5,8 @@ import NotFound from './notFound'
 import Other from './other'
 
 export const routes = [
-
   <Route path="/" init='home' component={Home} />,
   <Route path='/signup' component={Other} />,
-
+  <Route path='/signup/:id' component={Other} />,
   <Route path='*' component={NotFound} />
 ];

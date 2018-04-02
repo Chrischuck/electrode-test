@@ -6,11 +6,12 @@ import React from "react";
 
 export class Other extends React.Component {
   render() {
-    console.log(this.props.default)
+    console.log(this.props.location.action)
+
     return (
       [
         <div>hellasdfo</div>,
-        <a href='/'>asdf</a>
+        <Link to='/' >asdf</Link>
       ]
     );
   }
